@@ -1,0 +1,20 @@
+<argList name="jrc">
+	<arg name="jrc" 
+		brief="-s.jrc"
+		long="--s.jrc"
+		args="?"
+		countRange="{0,*}"
+		parseMethod="parseSimple"
+		runMethod="countWords"
+		outputMethod="outputWordCounts"
+		>
+		<help>
+		
+			JRC:
+			Simple plugin that detects JRC NM-xxx nanomaterials.
+			
+		</help>
+	</arg>	
+	
+</argList>
+			

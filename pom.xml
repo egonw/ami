@@ -68,6 +68,10 @@
                             <id>ami2-species</id>
                         </program>
                         <program>
+                            <mainClass>org.xmlcml.ami2.plugins.jrc.JRCPlugin</mainClass>
+                            <id>ami2-jrc</id>
+                        </program>
+                        <program>
                             <mainClass>org.xmlcml.ami2.plugins.word.WordPlugin</mainClass>
                             <id>ami2-word</id>
                         </program>
@@ -167,6 +171,12 @@
                             <symlink>true</symlink>
                             <linkName>/usr/bin/ami2-species</linkName>
                             <linkTarget>/usr/share/ami-repo/bin/ami2-species</linkTarget>
+                        </data>
+                        <data>
+                            <type>link</type>
+                            <symlink>true</symlink>
+                            <linkName>/usr/bin/ami2-jrc</linkName>
+                            <linkTarget>/usr/share/ami-repo/bin/ami2-jrc</linkTarget>
                         </data>
                         <data>
                             <type>link</type>

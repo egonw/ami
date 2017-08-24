@@ -30,6 +30,7 @@ public class AMIPlugin {
 		argProcessorNameByName.put("sequence", ORG_XMLCML_AMI_CLASSNAME+".sequence.SequenceArgProcessor");
 		argProcessorNameByName.put("species", ORG_XMLCML_AMI_CLASSNAME+".species.SpeciesArgProcessor");
 		argProcessorNameByName.put("word", ORG_XMLCML_AMI_CLASSNAME+".word.WordArgProcessor");
+		argProcessorNameByName.put("jrc", ORG_XMLCML_AMI_CLASSNAME+".jrc.JRCArgProcessor");
 	}
 
 	public AMIPlugin() {
