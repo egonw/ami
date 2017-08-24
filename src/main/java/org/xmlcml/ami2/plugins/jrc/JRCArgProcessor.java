@@ -1,9 +1,9 @@
 package org.xmlcml.ami2.plugins.jrc;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
+import java.util.Map;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -27,7 +27,7 @@ public class JRCArgProcessor extends AMIArgProcessor {
 	}
 	
 	protected List<String> words;
-	protected Set<String> materials;
+	protected Map<String,String> materials; // match, exact
 
 	HashSet<String> nms = new HashSet<String>() {{
 		add("NM-100");
@@ -78,12 +78,12 @@ public class JRCArgProcessor extends AMIArgProcessor {
 	
 	public void countWords(ArgumentOption option) {
 		words = currentCTree.extractWordsFromScholarlyHtml();
-		materials = new HashSet<String>();
+		materials = new HashMap<String,String>();
 		for (String word : words) {
 			if (word.startsWith("NM-")) {
 				word = normalizeWord(word);
 				if (nms.contains(word.toUpperCase())) {
-					materials.add(word);
+					materials.put(word, word);
 				} else {
 					System.out.println("word: " + word);
 				}
@@ -91,7 +91,7 @@ public class JRCArgProcessor extends AMIArgProcessor {
 				word = normalizeWord(word);
 				String refword = "NM-" + word.substring(2);
 				if (nms.contains(refword.toUpperCase())) {
-					materials.add(word);
+					materials.put(refword, word);
 				} else {
 					System.out.println("word: " + word);
 				}
@@ -124,9 +124,10 @@ public class JRCArgProcessor extends AMIArgProcessor {
 		ContentProcessor contentProc = getOrCreateContentProcessor();
 
 		ResultsElement resultsElement = new ResultsElement();
-		for (String material : materials) {
+		for (String matches : materials.keySet()) {
 			ResultElement resultElement = new ResultElement();
-			resultElement.setValue("material", material);
+			resultElement.setValue("match", matches);
+			resultElement.setValue("exact", materials.get(matches));
 			resultsElement.appendChild(resultElement);
 		}
 		resultsElement.setTitle("jrc");
