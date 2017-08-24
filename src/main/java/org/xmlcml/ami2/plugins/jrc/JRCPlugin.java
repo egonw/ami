@@ -26,7 +26,7 @@ public class JRCPlugin extends AMIPlugin {
 	}
 	
 	public static void main(String[] args) {
-		System.out.println("Main started...");
+//		System.out.println("Main started...");
 		JRCArgProcessor argProcessor = new JRCArgProcessor(args);
 		argProcessor.runAndOutput();
 	}

@@ -85,7 +85,7 @@ public class JRCArgProcessor extends AMIArgProcessor {
 				if (nms.contains(word.toUpperCase())) {
 					materials.put(word, word);
 				} else {
-					System.out.println("word: " + word);
+//					System.out.println("word: " + word);
 				}
 			} else if (word.startsWith("NM") && word.length()>2 && Character.isDigit(word.charAt(2))) { // NMxxx
 				word = normalizeWord(word);
@@ -93,7 +93,7 @@ public class JRCArgProcessor extends AMIArgProcessor {
 				if (nms.contains(refword.toUpperCase())) {
 					materials.put(refword, word);
 				} else {
-					System.out.println("word: " + word);
+//					System.out.println("word: " + word);
 				}
 			}
 		}
