@@ -1,0 +1,20 @@
+<argList name="WikiPathways">
+	<arg name="WikiPathways" 
+		brief="-s.wp"
+		long="--s.wp"
+		args="?"
+		countRange="{0,*}"
+		parseMethod="parseSimple"
+		runMethod="countWords"
+		outputMethod="outputWordCounts"
+		>
+		<help>
+		
+			WikiPathways:
+			Simple plugin that detects WikiPathways pathway identifiers.
+			
+		</help>
+	</arg>	
+	
+</argList>
+			
